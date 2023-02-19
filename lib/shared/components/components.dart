@@ -207,6 +207,7 @@ Widget buildArticlesItem(article, context) => Padding(
                   Expanded(
                     child: Text(
                       '${article['title']}',
+                      // style: Theme.of(context).textTheme.bodyMedium,
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
                     ),
