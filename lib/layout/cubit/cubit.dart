@@ -6,6 +6,7 @@ import 'package:news_app/layout/cubit/states.dart';
 import 'package:news_app/modules/business/business_screen.dart';
 import 'package:news_app/modules/science/science_screen.dart';
 import 'package:news_app/modules/sports/sports_screen.dart';
+import 'package:news_app/shared/network/local/cache_helper.dart';
 import 'package:news_app/shared/network/remote/dio_helper.dart';
 
 class NewsCubit extends Cubit<NewsStates> {
@@ -129,8 +130,15 @@ class NewsCubit extends Cubit<NewsStates> {
 
   bool isDark = false;
 
-  void changeAppMode() {
-    isDark = !isDark;
-    emit(NewsChangeModeStates());
+  void changeAppMode({bool? fromShared}) {
+    if (fromShared != null) {
+      isDark = fromShared;
+    } else {
+      isDark = !isDark;
+    }
+
+    CacheHelper.putboolean(key: 'isDark', value: isDark).then((value) {
+      emit(NewsChangeModeStates());
+    });
   }
 }
