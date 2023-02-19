@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
               textTheme: TextTheme(
-                  bodyLarge: TextStyle(
+                  bodyMedium: TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.w600,
                 color: Colors.black,
@@ -72,7 +72,7 @@ class MyApp extends StatelessWidget {
 
             darkTheme: ThemeData(
               textTheme: TextTheme(
-                  bodyLarge: TextStyle(
+                  bodyMedium: TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.w600,
                 color: Colors.white,
