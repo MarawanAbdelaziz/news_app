@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/layout/cubit/cubit.dart';
 import 'package:news_app/layout/cubit/states.dart';
+import 'package:news_app/modules/search/search_screen.dart';
+import 'package:news_app/shared/components/components.dart';
 
 class NewsLayout extends StatelessWidget {
   @override
@@ -18,7 +20,12 @@ class NewsLayout extends StatelessWidget {
             title: Text(cubit.titles[cubit.currentIndex]),
             actions: [
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    navigateTo(
+                      context,
+                      SearchScreen(),
+                    );
+                  },
                   icon: Icon(
                     Icons.search,
                   )),

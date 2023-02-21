@@ -1,6 +1,5 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors
 
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,7 +19,7 @@ void main() async {
 
   bool? isDark = CacheHelper.getboolean(key: "isDark");
 
-  runApp(MyApp(isDark!));
+  runApp(MyApp(isDark ?? false));
 }
 
 class MyApp extends StatelessWidget {
