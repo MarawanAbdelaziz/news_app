@@ -80,6 +80,7 @@ class MyApp extends StatelessWidget {
             //!!!!!!
 
             darkTheme: ThemeData(
+              primarySwatch: Colors.deepOrange,
               textTheme: TextTheme(
                   bodyMedium: TextStyle(
                 fontSize: 18.0,

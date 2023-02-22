@@ -14,7 +14,7 @@ class SearchScreen extends StatelessWidget {
     return BlocConsumer<NewsCubit, NewsStates>(
       listener: (context, state) {},
       builder: (context, state) {
-        var list;
+        var list = NewsCubit.get(context).search;
         return Scaffold(
           appBar: AppBar(),
           body: Column(children: [
@@ -23,7 +23,9 @@ class SearchScreen extends StatelessWidget {
               child: defaultFormField(
                 controller: searchController,
                 type: TextInputType.text,
-                onChange: (value) {},
+                onChange: (value) {
+                  NewsCubit.get(context).getSearch(value);
+                },
                 validate: (value) {
                   if (value!.isEmpty) {
                     return " Please don't let me Empty ";
